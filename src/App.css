@@ -68,8 +68,9 @@ i {
   border-top-right-radius: 25px;
 }
 
-.todos h5{
+.todos h4{
   color: yellowgreen;
+  margin-bottom: 10px;
 }
 
 .todo {
@@ -115,6 +116,48 @@ i {
 
 span{
   color: transparent;
+}
+
+
+@media only screen and (max-device-width: 412px) and (orientation: portrait){
+
+  body {
+   
+    background-image: url("../image/todowall=phone=updated.png");
+    background-color: #FFC300;
+    background-repeat: no-repeat;
+ }
+
+ input{
+  margin-right: 205px;
+ }
+  .container{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+  }
+
+  .cent{
+    order: -1;
+    align-self: center;
+    width: 21em;
+  }
+
+  .rt{
+    width: 21em;
+    align-self: center;
+    
+  }
+
+  .lf .textarea{
+    margin-top: 20px;
+    align-self: center;
+    width: 280%;
+    margin-left: 20%;
+  }
 }
 
 

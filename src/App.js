@@ -35,7 +35,7 @@ function App() {
         <div className='rt'> 
           <span color="white">hello i am right </span>
           <div className="todos">
-            <h5>COMPLETED TASK</h5>
+            <h4>COMPLETED TASK</h4>
             {
               todos.map((obj)=>
               {
@@ -59,7 +59,7 @@ function App() {
         <div className="cent">
           <span>hello i am centre </span>
           <div className="todos">
-            <h5>NOTE IS REMEBERED</h5>
+            <h4>NOTE IS REMEBERED</h4>
             {
               todos.map((value)=>
                 <div className="todo">
