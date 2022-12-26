@@ -10,9 +10,6 @@ function App() {
   const weekDay = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"]
   const day = weekDay[d.getDay()]
 
-
-
-
   return (
     <div className="app">
 
@@ -22,67 +19,79 @@ function App() {
 
       <div className="subHeading">
         <br />
-        <h2>Whoop, it's {day} 🌝 ☕ </h2>
+        <h2>C'mon it's {day} 🌝☕</h2>
       </div>
+
+      <br />
 
       <div className="input">
         <input type="text" placeholder="🖊️ Add item..."  onChange= {(event)=>setTodo(event.target.value)} />
-        <i className="fas fa-plus" onClick={()=>setTodos([...todos,{id:Date.now(),txt:todo,status:false,cross:false}])}></i>
+        <i onClick={()=>setTodos([...todos,{id:Date.now(),txt:todo,status:false,cross:false}])}> + </i>
       </div>
 
-      <div className="todos">
 
+      <div className="container">
 
-        {
-        todos.map((value)=>
-        <div className="todo">
-          
-          <div className="left">
-            <input  onChange={(e)=>
-            setTodos(todos.filter(obj=>{
-              if(obj.id===value.id){
-                obj.status=e.target.checked
-              }
-              return obj
-            }))
-            }  value={value.status} type="checkbox" name="" id=""/>
-            <p>{value.txt}</p>
-          </div>
-
-
-          <div className="right">
-            <i className="fas fa-times" onClick={()=>setTodos(todos.filter((obj2)=> obj2.id !== value.id))}></i>
-          </div>
-
-        </div>
-        )}
-
-
-
-
-        {
-          todos.map((obj)=>
-          {
-            if(obj.status)
+        <div className='rt'> 
+          <span color="white">hello i am right </span>
+          <div className="todos">
+            <h5>COMPLETED TASK</h5>
             {
-              return(
+              todos.map((obj)=>
+              {
+                if(obj.status)
+                {
+                  return(
+                    <div className="todo">
+                      <div className="left">
+                        <p>{obj.txt}</p>
+                      </div>
+                    </div>  
+                  )
+                }
+                return  null
+              }
+              )  
+           }  
+          </div>
+        </div>
+
+        <div className="cent">
+          <span>hello i am centre </span>
+          <div className="todos">
+            <h5>NOTE IS REMEBERED</h5>
+            {
+              todos.map((value)=>
                 <div className="todo">
-          
                   <div className="left">
-            
-                    <p>{obj.txt}</p>
+                    <input  onChange={(e)=>
+                        setTodos(todos.filter(obj=>{
+                          if(obj.id===value.id)
+                          {
+                            obj.status=e.target.checked
+                          }
+                        return obj
+                        }
+                        ))
+                      }  value={value.status} type="checkbox" name="" id=""/>
+                    <p>{value.txt}</p>
                   </div>
-                </div>  
+                  <div className="right">
+                    <i className="x" onClick={()=>setTodos(todos.filter((obj2)=> obj2.id !== value.id))}> x </i>
+                  </div>
+                </div>
               )
             }
-            return  null
-          }
-          )
-          
-        }
+          </div>
+        </div>
 
-        
+        <div className ="lf">
+          <span>hello i am left </span>
+          <textarea class="textarea" placeholder="Note a point to rembember..."></textarea>
+        </div>
+
       </div>
+
     </div>
   );
 }
