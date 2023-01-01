@@ -118,8 +118,31 @@ span{
   color: transparent;
 }
 
+button {
+  background-color: white; 
+  border: none; 
+  color: black; 
+  padding: 10px 12px; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block;
+  font-size: 15px; 
+  margin: 4px 2px;
+  cursor: pointer; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
+  transition: all 0.5s; 
+}
+  
+  
+button:hover {
+  transform: scale(1.1); 
+  background-color: #FFC300;
+  color: white;  
+}
 
-@media only screen and (max-device-width: 800px) {
+
+@media only screen and (max-device-width: 900px) {
 
   body {
    
@@ -143,6 +166,7 @@ span{
     order: -1;
     align-self: center;
     width: 21em;
+
   }
 
   .rt{
@@ -166,6 +190,18 @@ span{
     width: 100%;
     margin: auto ;
   }
+  button{
+    background-color: #FFC300;
+  color: white; 
+  }
+
+  p{
+    align-items: center;
+    margin-left: 0px;
+    position: absolute;
+    right: 50%;
+  }
+
 
   
 }

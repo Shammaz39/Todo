@@ -10,6 +10,7 @@ function App() {
   const weekDay = ["SUNDAY","MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY"]
   const day = weekDay[d.getDay()]
 
+
   return (
     <div className="app">
 
@@ -26,7 +27,8 @@ function App() {
 
       <div className="input">
         <input type="text" placeholder="🖊️ Add item..."  onChange= {(event)=>setTodo(event.target.value)} />
-        <i onClick={()=>setTodos([...todos,{id:Date.now(),txt:todo,status:false,cross:false}])}> + </i>
+        <button  onClick={()=>setTodos([...todos,{id:Date.now(),txt:todo,status:false,cross:false}])}>ADD</button>
+        
       </div>
 
 
@@ -77,7 +79,7 @@ function App() {
                     <p>{value.txt}</p>
                   </div>
                   <div className="right">
-                    <i className="x" onClick={()=>setTodos(todos.filter((obj2)=> obj2.id !== value.id))}> x </i>
+                    <button onClick={()=>setTodos(todos.filter((obj2)=> obj2.id !== value.id))}>REMOVE</button>
                   </div>
                 </div>
               )
